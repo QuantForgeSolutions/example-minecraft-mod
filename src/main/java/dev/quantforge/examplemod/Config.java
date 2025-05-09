@@ -1,4 +1,4 @@
-package dev.quantforge.example;
+package dev.quantforge.examplemod;
 
 import java.util.List;
 import java.util.Set;
