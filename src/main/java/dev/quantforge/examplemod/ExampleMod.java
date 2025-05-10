@@ -1,6 +1,8 @@
 package dev.quantforge.examplemod;
 
+import dev.quantforge.examplemod.datagen.ModModelProvider;
 import dev.quantforge.examplemod.item.ModItems;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -61,6 +63,8 @@ public class ExampleMod
     {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.COBALT);
+            event.accept(ModItems.MITHRIL);
         }
     }
 
@@ -79,6 +83,10 @@ public class ExampleMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
 
+        }
+        @SubscribeEvent
+        public static void gatherData(GatherDataEvent.Client event) {
+            event.createProvider(ModModelProvider::new);
         }
     }
 }

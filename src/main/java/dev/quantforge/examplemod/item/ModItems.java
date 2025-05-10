@@ -14,6 +14,16 @@ public class ModItems {
             new Item.Properties()
     );
 
+    public static final DeferredItem<Item> COBALT = ITEMS.registerSimpleItem(
+            "cobalt",
+            new Item.Properties()
+    );
+
+    public static final DeferredItem<Item> MITHRIL = ITEMS.registerSimpleItem(
+            "mithril",
+            new Item.Properties()
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
